@@ -1,5 +1,6 @@
 import { html, css, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
+import { classMap } from 'lit/directives/class-map.js';
 
 export class MyElement extends LitElement {
   static styles = css`
@@ -20,7 +21,7 @@ export class MyElement extends LitElement {
 
   render() {
     return html`
-      <h2>${this.title} Nr. ${this.counter}!</h2>
+      <h2 ${classMap({ test: true })}>${this.title} Nr. ${this.counter}!</h2>
       <button @click=${this.__increment}>increment</button>
     `;
   }
